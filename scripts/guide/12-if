@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# man test
+test -n ""
+echo "$?"
+
+name="Randy"
+# help [[
+if [[ "$name" == "Randy" ]]; then
+  echo "Hello! $name"
+fi
+
+n=9
+if ((n>5)); then
+  echo "n is greater than 5"
+fi

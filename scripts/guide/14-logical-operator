@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+code=1
+((code == 0)) && echo "success"
+((code > 0)) && echo "failure"
+false || echo "recover"
+true || echo "won't print"
+
+echo "$0"
+[[ -r "$0" ]] && echo "is readable"

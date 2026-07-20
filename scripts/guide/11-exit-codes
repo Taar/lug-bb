@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo "Hello!"
+echo "$?"
+
+false
+echo "$?"
+echo "$?"
