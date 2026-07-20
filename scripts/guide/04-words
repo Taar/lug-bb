@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# 3 words
+echo Foo Bar
+# 5 words
+printf "%s\n" Hello \u2014 World\!
+# 3 words
+printf "%s\n" "Hello \u2014 World!"

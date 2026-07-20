@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+declare -a my_array
+my_array=(a b c d)
+# -r makes the array read only
+declare -ra my_array=(1 2 3 4)
+echo "${my_array[@]}"
+my_array[4]=5
+
+# Associative Array
+declare -A key_array=(
+  [d]="hello world"
+  [c]=bar
+  [b]="bar"
+  [a]=foo
+)
+echo "${key_array[@]}"
+echo "${!key_array[@]}"
+echo "${key_array[a]}"
+echo "${key_array[d]}"
+
+declare -i a="1 + 16#FF"
+echo "$a"

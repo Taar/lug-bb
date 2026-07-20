@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+readonly name="Randy"
+name="Not Randy"

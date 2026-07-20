@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+printf "Hello World!\n"
+printf "Foo Bar\n" "Hello World!"
+# Do this instead or just use echo
+printf "%s\n" "Hello World!"
+printf "%s\n" "Em dash [\u2014]"
+printf "%s\u2014\n" "Hello" "World"

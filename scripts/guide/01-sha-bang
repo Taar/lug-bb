@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "Bourne Again SHell"
+echo "Magic - shebang '#!'"
+echo "#!/usr/bin/env bash"
+echo "man env"

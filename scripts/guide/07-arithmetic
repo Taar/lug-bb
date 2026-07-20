@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+n=1
+i=2+$n
+echo "$i"
+# $(( expression ))
+echo $(($n + n))
+echo "$((i + n))"
+# "2+1" + 1
+# Everything is a string until it's not
+a=10#08
+b=101
+echo $((a + "2#$b"))
+a=08
+echo $((a + b))

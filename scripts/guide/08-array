@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+words=(foo "bar" baz "hello world")
+printf "%s\u2014" "${words[@]}"
+echo
+echo "${!words[@]}"
+echo "${words[0]}"
+echo "${words[-1]}"

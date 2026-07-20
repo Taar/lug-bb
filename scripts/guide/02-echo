@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "Hello World!"
+echo "Hello\nWorld!"
+echo -e "Hello\nWorld!"
+echo -e "Em dash [\u2014] works!"

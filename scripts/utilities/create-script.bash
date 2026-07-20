@@ -70,7 +70,7 @@ if [[ -n "$template_file" ]] && [[ ! -r "$template_file" ]]; then
 fi
 
 max_integer() {
-  printf '%s\n' "$@" | sort -n | tail -1
+  printf '10#%s\n' "$@" | sort -n | tail -1
 }
 
 prefix_name_with_script_count() {
