@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo "${v:-default_value}"
+v=actual_value
+echo "${v:-default_value}"
+
+v=abcd
+echo "${v:0:2}"
+echo "${v: -2:2}"
+
+v=(a b c d)
+echo "${v[@]:0:2}"
+echo "${v[@]: -3}"
+
+v=abcd
+echo "${v/a/x}"
+echo "${v/ab/xk}"

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+v=abcdefghi
+if [[ "$v" =~ ^abc ]]; then
+  echo "Starts with abc"
+fi
+
+echo "${v//[abc]/x}"
+echo "${v//[^abc]/x}"
+
+d=1234abcd
+echo "${d//[[:digit:]]/x}"
