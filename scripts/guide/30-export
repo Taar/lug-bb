@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Only will work if sourced
 export SHOW_MESSAGE=1
 MY_MESSAGE="Hello World"
 export MY_MESSAGE
