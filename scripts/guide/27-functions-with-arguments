@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+add() {
+  local count="${#@}"
+  if ((count < 2)); then
+    return 1
+  fi
+  echo $(($1 + $2))
+}
+
+add
+echo "code: $?"
+add 1 2 4
+echo "echo: $?"

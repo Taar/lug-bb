@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+v=0
+func1() {
+  v=1
+}
+func1
+echo "$v"
+
+func2() {
+  local v=2
+}
+func2
+echo "$v"

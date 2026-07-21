@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# `. ./22-arguments`
+source ./22-arguments

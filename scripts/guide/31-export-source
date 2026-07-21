@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+source ./29-environment-variables

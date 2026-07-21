@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+show_message="${SHOW_MESSAGE:-0}"
+if (( $show_message == 1)); then
+  echo "secret message wowwy"
+fi
