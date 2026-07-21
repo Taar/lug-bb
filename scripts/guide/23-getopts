@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+getopts 'ab:c' arg
+echo "$arg"

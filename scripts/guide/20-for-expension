@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+for v in {0..5}; do
+  echo "$v"
+done
+
+for v in {a..f}; do
+  echo "$v"
+done

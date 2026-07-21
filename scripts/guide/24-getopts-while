@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+while getopts 'ab:c' arg; do
+  case "$arg" in
+    a)
+      echo "parsed 'a' flag"
+    ;;
+    b)
+      echo "parsed 'b' flag with $OPTARG"
+    ;;
+    c)
+      echo "parsed 'c' flag"
+    ;;
+    ?)
+      echo "program [-a] [-b value] [-c] message"
+    ;;
+  esac
+done
+
+shift $(($OPTIND - 1))
+for arg in "$@"; do
+  echo "$arg"
+done

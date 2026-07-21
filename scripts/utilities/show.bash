@@ -31,5 +31,6 @@ cat_bin="${cat_like_bins[-1]}"
 
 echo
 "$cat_bin" "$file"
-source "$file"
+shift "$((OPTIND))"
+source "$file" "$@"
 echo

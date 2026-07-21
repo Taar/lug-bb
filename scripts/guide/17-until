@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+v=abcdefghijk
+# until exit code == 0
+until [[ ! "$v" =~ ^[abdc] ]]; do
+  v="${v/#?/}"
+  echo "$v"
+done

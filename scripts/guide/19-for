@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+my_array=(a b c d)
+for v in "${my_array[@]}"; do
+  echo "$v"
+done
+
+for v in a b c d; do
+  echo "$v"
+done
