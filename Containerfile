@@ -41,7 +41,7 @@ RUN mkdir -m u=rwx,g=,o= ./lug
 RUN rm .profile
 COPY ./bashrc.bash .bashrc
 COPY ./bash_aliases.bash .bash_aliases
-COPY ./bash_profile.bash .bash_profile
+COPY ./profile.bash .profile
 
 COPY ./Containerfile ./lug/Containerfile
 COPY ./LICENSE ./lug/LICENSE
