@@ -30,16 +30,24 @@ RUN apt-get -y update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN groupadd lug
-RUN useradd -G lug -m gnuplususer
+RUN useradd -m gnuplususer
 
-RUN mkdir /lug && \
-    chown root:lug /lug && \
-    chmod u=rwx,g=rwxs,o= /lug
-
-COPY --chown=gnuplususer:lug ./Containerfile /lug/Containerfile
+WORKDIR /home/gnuplususer/
 
 USER gnuplususer
-WORKDIR /home/gnuplususer
+
+RUN mkdir -m u=rwx,g=,o= ./lug
+
+RUN rm .profile
+COPY ./bashrc.bash .bashrc
+COPY ./bash_aliases.bash .bash_aliases
+COPY ./bash_profile.bash .bash_profile
+
+COPY ./Containerfile ./lug/Containerfile
+COPY ./LICENSE ./lug/LICENSE
+COPY ./scripts ./lug/scripts
+
+RUN mkdir -p -m u=rwx,g=,o= ./.local/bin
+RUN ln -s /home/gnuplususer/lug/scripts/utilities/* /home/gnuplususer/.local/bin/ 
 
 ENTRYPOINT bash
