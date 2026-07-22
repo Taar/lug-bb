@@ -5,12 +5,12 @@ By: Randy Topliffe
 ---
 # Git Repo
 
-github.com/Taar/lug-bash-basics
+https://github.com/Taar/lug-bash-basics
 
 ---
 # Following Along
 
-podman run --rm -t ghcr.io/Taar/lug-bb:latest
+podman run --rm -it ghcr.io/Taar/lug-bb:latest
 
 ---
 # Fin
