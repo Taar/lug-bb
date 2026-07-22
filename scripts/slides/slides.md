@@ -13,7 +13,7 @@ github.com/Taar/lug-bash-basics
 podman run --rm -t ghcr.io/Taar/lug-bb:latest
 
 ---
-# FIN
+# Fin
 
 Happy coding everyone!
 

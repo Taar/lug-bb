@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 
-ESC="\x1b"
+ESC=$'\x1b'
+
 
 cols=$(tput cols)
-rows=$(tput lines)
 line_colour=40
 
 set_colour() {
   local colour
   colour="$1"
   [[ -z "$colour" ]] && colour=39
-  echo -n -e "$ESC[38;5;${colour}m"
+  echo -n -e "${ESC}[38;5;${colour}m"
 }
 
 reset() {
-  echo -n -e "$ESC[0m"
+  echo -n -e "${ESC}[0m"
 }
 
 style_line() {
@@ -32,9 +32,9 @@ style_line() {
 readonly lc="\\u2014"
 draw_line() {
   local line middle leftover digits
-  middle=$(((cols/2)))
+  middle=$(( cols / 2 ))
   digits="${#2}"
-  leftover=$(((cols % 2) + (digits % 2)))
+  leftover=$(( (cols % 2) + (digits % 2) ))
 
   printf -v line "%0${middle}d" "0"
 
@@ -42,7 +42,7 @@ draw_line() {
   left="${line:$((leftover + (digits / 2)))}"
   right="${line:$((digits / 2))}"
 
-  echo -e "$(set_colour $1)${left//0/$lc}$2${right//0/$lc}\n"
+  echo -e "$(set_colour "$1")${left//0/$lc}$2${right//0/$lc}\n"
   reset
 }
 
@@ -55,14 +55,10 @@ show-slide() {
   [[ -z "$show_slide" ]] && show_slide=1
 
   while true; do
-    local chunk code bytes
+    local chunk code
 
-    # TODO: If the slide line ends in an single `n` eg. `# fin` the
-    # `n` char will be dropped from the chink. Not sure why, need
-    # to investigate
-    IFS="\n" read -r chunk
+    IFS=$'\n' read -r chunk
     code=$?
-    bytes="${#chunk}"
 
     if ((code != 0)); then
       return 0
