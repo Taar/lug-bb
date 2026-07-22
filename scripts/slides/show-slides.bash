@@ -57,6 +57,9 @@ show-slide() {
   while true; do
     local chunk code bytes
 
+    # TODO: If the slide line ends in an single `n` eg. `# fin` the
+    # `n` char will be dropped from the chink. Not sure why, need
+    # to investigate
     IFS="\n" read -r chunk
     code=$?
     bytes="${#chunk}"
