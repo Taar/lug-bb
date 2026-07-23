@@ -12,6 +12,7 @@ RUN apt-get -y update && \
         man-db \
         shellcheck \
         curl \
+        locales \
         python3 \
         pip \
         pipx \
@@ -34,20 +35,24 @@ RUN useradd -m gnuplususer
 
 WORKDIR /home/gnuplususer/
 
+RUN sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen
+RUN locale-gen
+RUN echo "LANG=en_US.UTF-8" > /etc/default/locale
+
 USER gnuplususer
 
 RUN mkdir -m u=rwx,g=,o= ./lug
 
 RUN rm .profile
-COPY ./bashrc.bash .bashrc
-COPY ./bash_aliases.bash .bash_aliases
-COPY ./profile.bash .profile
+COPY --chown=gnuplususer:gnuplususer ./bashrc.bash .bashrc
+COPY --chown=gnuplususer:gnuplususer ./bash_aliases.bash .bash_aliases
 
-COPY ./Containerfile ./lug/Containerfile
-COPY ./LICENSE ./lug/LICENSE
-COPY ./scripts ./lug/scripts
+COPY --chown=gnuplususer:gnuplususer ./scripts ./lug/scripts
 
 RUN mkdir -p -m u=rwx,g=,o= ./.local/bin
 RUN ln -s /home/gnuplususer/lug/scripts/utilities/* /home/gnuplususer/.local/bin/ 
+
+COPY --chown=gnuplususer:gnuplususer ./LICENSE ./lug/LICENSE
+COPY --chown=gnuplususer:gnuplususer ./Containerfile ./lug/Containerfile
 
 ENTRYPOINT bash
